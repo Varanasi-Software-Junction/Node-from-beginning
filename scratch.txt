@@ -1,0 +1,15 @@
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*', // Allow requests from any origin
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE', // Allowed HTTP methods
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization' // Allowed headers
+    });
+    res.end('Hello from the server!');
+});
+
+server.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});
